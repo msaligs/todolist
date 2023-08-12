@@ -9,39 +9,144 @@ h1{
 
 .content {
     margin: 0 auto;
-    width: 400px;
+    width: 600px;
 }
 
-table, td, th {
-    border: 1px solid #aaa;
-}
-
-table {
-    border-collapse: collapse;
+.task-table {
     width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
 }
 
-th {
-    height: 30px;
+.task-table th, .task-table td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
 }
 
-td {
+.task-table th:nth-child(2) {
+    width: 300px; 
+}
+.task-table th:nth-child(1) {
+    width: 30px; 
+}
+
+.task-table th:nth-child(3),
+.task-table th:nth-child(4) {
+    width: 100px;
+}
+
+.task-table th {
+    background-color: #f2f2f2;
+}
+
+.task-table td {
+    vertical-align: middle;
+}
+
+.action-link {
+    color: #337ab7;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+.action-link:hover {
+    text-decoration: underline;
+}
+
+
+/* Apply this CSS to style your flashed messages */
+.alert {
+    position: fixed;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 15px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    z-index: 1000; /* Ensure the alert is above other content */
+    opacity: 0; /* Initially hidden */
+    background-color: #fff; /* Adjust the background color */
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    transition: opacity 0.3s ease-in-out; /* Added transition property */
+}
+
+.alert.show {
+    opacity: 1; /* Show the alert */
+    transition: opacity 0.3s ease-in-out; /* Added transition property */
+}
+.alert-success {
+    color: #3c763d;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+}
+
+.alert-info {
+    color: #31708f;
+    background-color: #d9edf7;
+    border-color: #bce8f1;
+}
+
+.alert-warning {
+    color: #8a6d3b;
+    background-color: #fcf8e3;
+    border-color: #faebcc;
+}
+
+.alert-danger {
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+}
+
+/* Add more styling classes as needed */
+.task-form {
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+}
+
+.form-group {
+    margin-right: 10px;
+    flex: 1;
+}
+
+.form-control {
+    border: 3px solid #ccc;
+    border-radius: 6px;
+    padding: 5px 20px;
+    width: 90%;
+    height:30px ;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.form-control:focus {
+    border-color: #66afe9;
+    outline: 0;
+    box-shadow: 0 0 5px rgba(102, 175, 233, 0.5);
+}
+
+.btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 400;
     text-align: center;
-    padding: 5px;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    transition: all 0.3s ease-in-out;
 }
 
-form {
-    margin-top: 20px;
-    
+.btn-primary {
+    color: #fff;
+    background-color: #337ab7;
+    border-color: #2e6da4;
 }
 
-#content {
-    width: 70%;
-    height: 30px;
-}
-#btn{
-    width: 25%;
-    font-size: 20px;
-    padding:3px 3px;
-    border-radius: 8px;
+.btn-primary:hover {
+    background-color: #286090;
+    border-color: #204d74;
 }

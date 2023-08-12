@@ -10,9 +10,22 @@
 {% block body %}
     <h1> Task Master </h1>
     <div class="content">
-        <form method="post" action="/update/{{task.id}}">
-            <input type="text" name="content" id="content" value="{{task.content}}" required>
-            <input type="submit" value="Update Task" name="submit" >
+        <!-- for flash msg -->
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+            <div class="alert alert-{{ category }} {% if message %}show{% endif %}" role="alert">
+                {{ message }}
+            </div>
+            {% endfor %}
+        {% endif %}
+        {% endwith %}
+<!-- ========================================== -->
+        <form method="post" action="/update/{{task.id}}" class="task-form">
+            <div class="form-group">
+                <input type="text" name="content" id="content" value="{{task.content}}" class="form-control" placeholder="Enter task content" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Add Task</button>
         </form>
     </div>
 {% endblock%}
