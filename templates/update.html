@@ -23,9 +23,10 @@
 <!-- ========================================== -->
         <form method="post" action="/update/{{task.id}}" class="task-form">
             <div class="form-group">
+		<h3> Update task '{{ task.content }}' </h3>
                 <input type="text" name="content" id="content" value="{{task.content}}" class="form-control" placeholder="Enter task content" required>
             </div>
-            <button type="submit" class="btn btn-primary">Add Task</button>
+            <button type="submit" class="btn btn-primary">Update Task</button>
         </form>
     </div>
 {% endblock%}
