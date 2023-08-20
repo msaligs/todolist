@@ -6,12 +6,12 @@ This is a simple ToDoList application built using Flask, which allows users to c
 
 1. Clone the repository using the following command:
    ```
-   git clone https://github.com/your-username/ToDoList-Flask-App.git
+   git clone https://github.com/msaligs/todolist.git
    ```
 
 2. Navigate to the project directory:
    ```
-   cd ToDoList-Flask-App
+   cd todolist
    ```
 
 3. Install the required dependencies using `pip`:
@@ -21,9 +21,11 @@ This is a simple ToDoList application built using Flask, which allows users to c
 
 4. Create the database by running the following commands:
    ```
-   flask db init
-   flask db migrate
-   flask db upgrade
+   python
+>>> from app import db  
+>>> db.create_all()
+>>> exit()
+
    ```
 
 ## Usage

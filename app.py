@@ -1,7 +1,6 @@
 from flask import Flask, request, redirect, render_template,flash
 from flask_sqlalchemy import SQLAlchemy
 from model import *
-# import webview
 from resources import *
 from flask_cors import CORS 
 import requests
@@ -78,15 +77,8 @@ def  update(id):
         
     else:
         return render_template('update.html',task = task)
-    
-
-def start_webview():
-    webview.create_window("Note Taker", app)
-    webview.start()
-
 
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
-    # start_webview()
+    app.run()
