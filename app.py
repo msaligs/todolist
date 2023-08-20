@@ -1,7 +1,7 @@
 from flask import Flask, request, redirect, render_template,flash
 from flask_sqlalchemy import SQLAlchemy
 from model import *
-import webview
+# import webview
 from resources import *
 from flask_cors import CORS 
 import requests
