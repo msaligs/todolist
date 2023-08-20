@@ -22,9 +22,9 @@ This is a simple ToDoList application built using Flask, which allows users to c
 4. Create the database by running the following commands:
    ```
    python
->>> from app import db  
->>> db.create_all()
->>> exit()
+   from app import db  
+   db.create_all()
+   exit()
 
    ```
 
