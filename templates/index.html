@@ -1,63 +1,22 @@
 {% extends 'base.html' %}
 
-{% block head %} 
-    <title>Task Master</title>
+{% block head %}
+<title>Home</title>
 {% endblock %}
-    
+
 {% block body %}
-    <h1> Task Master </h1>
-
-    <div class="content ">
-        <!-- for flash msg -->
-        {% with messages = get_flashed_messages(with_categories=true) %}
-        {% if messages %}
-            {% for category, message in messages %}
-            <div class="alert alert-{{ category }} {% if message %}show{% endif %}" role="alert">
-                {{ message }}
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <div class="card mt-5">
+                <div class="card-header">
+                    <h4>Home</h4>
+                </div>
+                <div class="card-body">
+                    <p>Welcome to the home page!</p>
+                </div>
             </div>
-            {% endfor %}
-        {% endif %}
-        {% endwith %}
-
-    <!-- =============================================== -->
-    <form method="post" action="/" class="task-form">
-        <div class="form-group">
-            <input type="text" name="content" id="content" class="form-control" placeholder="Enter task content" required>
         </div>
-        <button type="submit" class="btn btn-primary">Add Task</button>
-    </form>
-    
-    
-
-        {% if tasks|length<1 %}
-            <h4> No current task, Create one Now!! </h4>
-        {% else %}
-        <table class="task-table">
-            <thead>
-                <tr>
-                    <th>#</th>
-                    <th>Task</th>
-                    <th>Creation Date</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for task in tasks %}
-                    <tr>
-                        <td>{{ loop.index }}</td>
-                        <td>{{ task.content }}</td>
-                        <td>{{ task.date_created }}</td>
-                        <td>
-                            <a href="/delete/{{ task.id }}" class="action-link">Delete</a>
-                            <a href="/update/{{ task.id }}" class="action-link">Update</a>
-                        </td>
-                    </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-        
-        {% endif %}
-            
-    
     </div>
+</div>
 {% endblock %}
